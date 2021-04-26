@@ -1160,7 +1160,8 @@ module Snowplow
           "--src"        , partition_by_run(good_path, run_id_folder),
           "--dest"       , partition_by_run(archive_path, run_id_folder),
           "--s3Endpoint" , s3_endpoint,
-          "--deleteOnSuccess"
+          "--deleteOnSuccess",
+          "--disableMultipartUpload"
         ]
         if encrypted
           archive_step.arguments = archive_step.arguments + [ '--s3ServerSideEncryption' ]
